@@ -1,9 +1,6 @@
 require 'test_helper'
 
 class ProductTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
   fixtures :products
 
   test "product attributes must not be empty" do
@@ -55,6 +52,6 @@ class ProductTest < ActiveSupport::TestCase
   		price: 12.3,
   		image_url: "hello.png")
   	assert product.invalid?
-  	assert_equal product.errors[:title], ["has already been taken"]
+  	assert_equal ["has already been taken"], product.errors[:title]
   end
 end
