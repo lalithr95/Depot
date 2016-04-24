@@ -7,6 +7,7 @@ class LineItemsController < ApplicationController
   # GET /line_items
   # GET /line_items.json
   def index
+    @product = Product.find(params[:product_id])
     @line_items = LineItem.all
   end
 
